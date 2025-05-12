@@ -1,0 +1,51 @@
+Windows Registry Editor Version 5.00
+
+; --- Tempodel for ALL files (*) ---
+
+[HKEY_CLASSES_ROOT\*\shell\TempodelCascade]
+"MUIVerb"="Tempodel"
+"Icon"="%ICON_PATH%" ; Placeholder
+"SubCommands"="TempodelAction1;TempodelAction3;TempodelAction7;TempodelAction30;TempodelActionConfig"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction1]
+@="Eliminar en 1 dia" ; Texto de esta opcion
+"Icon"="%ICON_PATH%"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction1\command]
+@="\"%PYTHON_PATH%\" \"%SCRIPT_PATH%\\tempodel_add_context.py\" \"%1\" 1"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction3]
+@="Eliminar en 3 dias"
+"Icon"="%ICON_PATH%"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction3\command]
+@="\"%PYTHON_PATH%\" \"%SCRIPT_PATH%\\tempodel_add_context.py\" \"%1\" 3"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction7]
+@="Eliminar en 7 dias"
+"Icon"="%ICON_PATH%"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction7\command]
+@="\"%PYTHON_PATH%\" \"%SCRIPT_PATH%\\tempodel_add_context.py\" \"%1\" 7"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction30]
+@="Eliminar en 30 dias"
+"Icon"="%ICON_PATH%"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction30\command]
+@="\"%PYTHON_PATH%\" \"%SCRIPT_PATH%\\tempodel_add_context.py\" \"%1\" 30"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelActionConfig]
+@="Configurar borrado..."
+"Icon"="%ICON_PATH%"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelActionConfig\command]
+@="\"%PYTHON_PATH%\" \"%SCRIPT_PATH%\\tempodel_gui.py\" \"%1\""
+
+
+; --- Tempodel for CARPETAS (Directory) ---
+
+[HKEY_CLASSES_ROOT\Directory\shell\TempodelCascade]
+"MUIVerb"="Tempodel"
+"Icon"="%ICON_PATH%"
+"SubCommands"="TempodelAction1;TempodelAction3;TempodelAction7;TempodelAction30;TempodelActionConfig"

@@ -1,0 +1,35 @@
+Windows Registry Editor Version 5.00
+
+; --- Eliminar entradas de Tempodel para TODOS los archivos (*) ---
+
+; Eliminar la entrada principal del menu (TempodelCascade)
+[-HKEY_CLASSES_ROOT\*\shell\TempodelCascade]
+
+; Eliminar subcomandos en CommandStore (Centralizados)
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction1]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction3]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction7]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelAction30]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\TempodelActionConfig]
+
+; Eliminar entradas antiguas planas (por si acaso)
+[-HKEY_CLASSES_ROOT\*\shell\Tempodel_01_day]
+[-HKEY_CLASSES_ROOT\*\shell\Tempodel_03_days]
+[-HKEY_CLASSES_ROOT\*\shell\Tempodel_07_days]
+[-HKEY_CLASSES_ROOT\*\shell\Tempodel_30_days]
+[-HKEY_CLASSES_ROOT\*\shell\Tempodel_Configure]
+
+
+; --- Eliminar entradas de Tempodel para CARPETAS (Directory) ---
+
+; Eliminar la entrada principal del menu
+[-HKEY_CLASSES_ROOT\Directory\shell\TempodelCascade]
+
+; (No hace falta repetir la eliminación de los SubCommands, ya se hace arriba en HKLM)
+
+; Eliminar entradas antiguas planas
+[-HKEY_CLASSES_ROOT\Directory\shell\Tempodel_01_day]
+[-HKEY_CLASSES_ROOT\Directory\shell\Tempodel_03_days]
+[-HKEY_CLASSES_ROOT\Directory\shell\Tempodel_07_days]
+[-HKEY_CLASSES_ROOT\Directory\shell\Tempodel_30_days]
+[-HKEY_CLASSES_ROOT\Directory\shell\Tempodel_Configure]
